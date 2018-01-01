@@ -29,6 +29,7 @@ RUN  apk add --no-cache php7 \
         php7-calendar \
         php7-posix \
         php7-pdo \
+        php7-fileinfo \
         php7-tidy \
         php7-ldap \
         php7-pgsql \
