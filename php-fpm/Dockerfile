@@ -7,6 +7,7 @@ RUN  apk add --no-cache php7 \
         php7-snmp \
         php7-phar \
         php7-xmlreader \
+        php7-fileinfo \
         php7-zip \
         php7-gd \
         php7-pdo_sqlite \
