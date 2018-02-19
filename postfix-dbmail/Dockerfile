@@ -15,7 +15,7 @@ VOLUME /etc/postfix
 VOLUME /var/spool/postfix
 EXPOSE 24 25 143 587 993
 CMD echo "starting servers..." \
-    && syslog-ng --no-caps \
+    && syslog-ng --no-caps --default-modules=affile,afprog,afsocket,afuser,basicfuncs,csvparser,dbparser,syslogformat \
     && saslauthd -a ldap \
     && postfix -c /etc/postfix start \
     && dbmail-lmtpd \
