@@ -1,23 +1,27 @@
-FROM base/archlinux:latest
+FROM    base/archlinux:latest
 
-RUN pacman -Sy --noconfirm archlinux-keyring && pacman -Syyu --noconfirm
-RUN pacman -S --noconfirm \
-        dbmail \
-        libsieve \
-        postfix \
-        cyrus-sasl \
-        cyrus-sasl-ldap \
-        syslog-ng \
-        json-c 
-RUN pacman -Scc --noconfirm
-RUN useradd dbmail && mkdir -p /var/log/dbmail && chown dbmail:dbmail /var/run/dbmail /var/log/dbmail
-VOLUME /etc/postfix
-VOLUME /var/spool/postfix
-EXPOSE 24 25 143 587 993
-CMD echo "starting servers..." \
-    && syslog-ng --no-caps --default-modules=affile,afprog,afsocket,afuser,basicfuncs,csvparser,dbparser,syslogformat \
-    && saslauthd -a ldap \
-    && postfix -c /etc/postfix start \
-    && dbmail-lmtpd \
-    && dbmail-timsieved \
-    && dbmail-imapd -v -D
+RUN     pacman -Syq --noconfirm archlinux-keyring systemd-sysvcompat \
+          && pacman -Syyuq --noconfirm
+RUN     pacman -Sq --noconfirm \
+          dbmail \
+          libsieve \
+          postfix \
+          cyrus-sasl \
+          cyrus-sasl-ldap \
+          syslog-ng \
+          json-c
+RUN     pacman -Sccq --noconfirm
+RUN     useradd dbmail \
+          && mkdir -p /var/log/dbmail \
+          && chown dbmail:dbmail /var/run/dbmail /var/log/dbmail
+
+VOLUME  /etc/postfix
+VOLUME  /var/spool/postfix
+EXPOSE  24 25 143 587 993
+CMD     echo "starting servers..." \
+          && syslog-ng --no-caps \
+          && saslauthd -a ldap \
+          && postfix -c /etc/postfix start \
+          && dbmail-lmtpd \
+          && dbmail-timsieved \
+          && dbmail-imapd -v -D
