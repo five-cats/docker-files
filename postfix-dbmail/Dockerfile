@@ -9,7 +9,10 @@ RUN     pacman -Sq --noconfirm \
           cyrus-sasl \
           cyrus-sasl-ldap \
           syslog-ng \
-          json-c
+          json-c \
+          librabbitmq-c \
+          libmongoc \
+          python
 RUN     pacman -Sccq --noconfirm
 RUN     useradd dbmail \
           && mkdir -p /var/log/dbmail \
