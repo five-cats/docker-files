@@ -79,5 +79,6 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   crond -d 2 && \
-        php-fpm7 -O -F
+CMD   php-fpm7 -D \
+        && crond -d 2 -f
+        
