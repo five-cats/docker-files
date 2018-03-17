@@ -70,16 +70,14 @@ RUN  apk add --no-cache php7 \
         php7-apcu
 RUN  pear install Net_LDAP2
 RUN  apk add --no-cache busybox-suid \
-        vim \
+        nano \
         bash \
-        sudo \
-        python3
-RUN  pip3 install gpxpy geojson
+        sudo
 RUN  rm -rf \
       /usr/share/doc \
       /usr/share/man \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   crond && \
+CMD   crond -d 2 && \
         php-fpm7 -O -F
