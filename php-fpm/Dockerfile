@@ -57,7 +57,6 @@ RUN  apk add --no-cache php7 \
         php7-sockets \
         php7-exif \
         php7-redis \
-        php7-mongodb \
         php7-inotify \
         php7-gmagick \
         php7-uuid \
