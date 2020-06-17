@@ -3,7 +3,6 @@ RUN  echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposito
 RUN  apk update \
         && apk upgrade
 RUN  apk add --no-cache php7 \
-        php7-wddx \
         php7-snmp \
         php7-phar \
         php7-xmlreader \
