@@ -42,10 +42,10 @@ RUN  apk add --no-cache php8 \
         php8-openssl \
         php8-sysvshm \
         php8-ftp \
-        php8-mcrypt \
+        php8-pecl-mcrypt \
         php8-intl \
         php8-pspell \
-        php8-xmlrpc \
+        php8-pecl-xmlrpc \
         php8-zlib \
         php8-xml \
         php8-sysvmsg \
@@ -56,16 +56,16 @@ RUN  apk add --no-cache php8 \
         php8-sockets \
         php8-exif \
         php8-redis \
-        php8-inotify \
-        php8-gmagick \
-        php8-uuid \
-        php8-oauth \
-        php8-memcached \
-        php8-timezonedb \
-        php8-lzf \
-        php8-msgpack \
-        php8-mailparse \
-        php8-apcu
+        php8-pecl-inotify \
+        php8-pecl-gmagick \
+        php8-pecl-uuid \
+        php8-pecl-oauth \
+        php8-pecl-memcached \
+        php8-pecl-timezonedb \
+        php8-pecl-lzf \
+        php8-pecl-msgpack \
+        php8-pecl-mailparse \
+        php8-pecl-apcu
 RUN  pear install Net_LDAP2
 RUN  apk add --no-cache busybox-suid \
         nano \
