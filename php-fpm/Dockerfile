@@ -2,70 +2,70 @@ FROM alpine:edge
 RUN  echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN  apk update \
         && apk upgrade
-RUN  apk add --no-cache php7 \
-        php7-snmp \
-        php7-phar \
-        php7-xmlreader \
-        php7-fileinfo \
-        php7-zip \
-        php7-gd \
-        php7-pdo_sqlite \
-        php7-imap \
-        php7-gmp \
-        php7-bcmath \
-        php7-enchant \
-        php7-mysqli \
-        php7-pear \
-        php7-session \
-        php7-xsl \
-        php7-dom \
-        php7-curl \
-        php7-iconv \
-        php7-gettext \
-        php7-pdo_pgsql \
-        php7-common \
-        php7-json \
-        php7-sysvsem \
-        php7-calendar \
-        php7-posix \
-        php7-pdo \
-        php7-tidy \
-        php7-ldap \
-        php7-pgsql \
-        php7-pdo_mysql \
-        php7-mbstring \
-        php7-ctype \
-        php7-pdo_dblib \
-        php7-pcntl \
-        php7-fpm \
-        php7-bz2 \
-        php7-openssl \
-        php7-sysvshm \
-        php7-ftp \
-        php7-mcrypt \
-        php7-intl \
-        php7-pspell \
-        php7-xmlrpc \
-        php7-zlib \
-        php7-xml \
-        php7-sysvmsg \
-        php7-opcache \
-        php7-dba \
-        php7-shmop \
-        php7-mysqlnd \
-        php7-sockets \
-        php7-exif \
-        php7-redis \
-        php7-inotify \
-        php7-gmagick \
-        php7-uuid \
-        php7-oauth \
-        php7-memcached \
-        php7-timezonedb \
-        php7-lzf \
-        php7-msgpack \
-        php7-mailparse \
-        php7-apcu
+RUN  apk add --no-cache php8 \
+        php8-snmp \
+        php8-phar \
+        php8-xmlreader \
+        php8-fileinfo \
+        php8-zip \
+        php8-gd \
+        php8-pdo_sqlite \
+        php8-imap \
+        php8-gmp \
+        php8-bcmath \
+        php8-enchant \
+        php8-mysqli \
+        php8-pear \
+        php8-session \
+        php8-xsl \
+        php8-dom \
+        php8-curl \
+        php8-iconv \
+        php8-gettext \
+        php8-pdo_pgsql \
+        php8-common \
+        php8-json \
+        php8-sysvsem \
+        php8-calendar \
+        php8-posix \
+        php8-pdo \
+        php8-tidy \
+        php8-ldap \
+        php8-pgsql \
+        php8-pdo_mysql \
+        php8-mbstring \
+        php8-ctype \
+        php8-pdo_dblib \
+        php8-pcntl \
+        php8-fpm \
+        php8-bz2 \
+        php8-openssl \
+        php8-sysvshm \
+        php8-ftp \
+        php8-mcrypt \
+        php8-intl \
+        php8-pspell \
+        php8-xmlrpc \
+        php8-zlib \
+        php8-xml \
+        php8-sysvmsg \
+        php8-opcache \
+        php8-dba \
+        php8-shmop \
+        php8-mysqlnd \
+        php8-sockets \
+        php8-exif \
+        php8-redis \
+        php8-inotify \
+        php8-gmagick \
+        php8-uuid \
+        php8-oauth \
+        php8-memcached \
+        php8-timezonedb \
+        php8-lzf \
+        php8-msgpack \
+        php8-mailparse \
+        php8-apcu
 RUN  pear install Net_LDAP2
 RUN  apk add --no-cache busybox-suid \
         nano \
@@ -77,6 +77,5 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   php-fpm7 -D \
+CMD   php-fpm8 -D \
         && crond -d 2 -f
-        
