@@ -64,7 +64,7 @@ RUN  apk add --no-cache php8 \
         php8-pecl-msgpack \
         php8-pecl-mailparse \
         php8-pecl-apcu
-RUN  pear install Net_LDAP2
+RUN  pear8 install Net_LDAP2
 RUN  apk add --no-cache busybox-suid \
         nano \
         bash \
