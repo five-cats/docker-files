@@ -45,7 +45,6 @@ RUN  apk add --no-cache php8 \
         php8-pecl-mcrypt \
         php8-intl \
         php8-pspell \
-        php8-pecl-xmlrpc \
         php8-zlib \
         php8-xml \
         php8-sysvmsg \
@@ -57,7 +56,6 @@ RUN  apk add --no-cache php8 \
         php8-exif \
         php8-redis \
         php8-pecl-inotify \
-        php8-pecl-gmagick \
         php8-pecl-uuid \
         php8-pecl-oauth \
         php8-pecl-memcached \
