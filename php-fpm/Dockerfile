@@ -75,5 +75,5 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   php-fpm8 -D \
+CMD   php-fpm8 -dopcache.enable=1 -dopcache.jit=1255 -dopcache.jit_buffer_size=100M -dpm.start_servers=6 -D \
         && crond -d 2 -f
