@@ -44,7 +44,6 @@ RUN  apk add --no-cache php8 \
         php8-ftp \
         php8-pecl-mcrypt \
         php8-intl \
-        php8-pspell \
         php8-zlib \
         php8-xml \
         php8-sysvmsg \
