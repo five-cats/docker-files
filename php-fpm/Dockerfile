@@ -2,7 +2,9 @@ FROM alpine:edge
 RUN  echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
 RUN  apk update \
         && apk upgrade
-RUN  apk add --no-cache php8 \
+RUN  apk add --no-cache \
+        git \
+        php8 \
         php8-opcache \
         php8-phar \
         php8-xmlreader \
@@ -74,5 +76,5 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   php-fpm8 -dopcache.enable=1 -dopcache.jit=1255 -dopcache.jit_buffer_size=100M -dpm.start_servers=6 -D \
+CMD   php-fpm8 -dopcache.enable=1 -dopcache.jit=1255 -dopcache.jit_buffer_size=100M -dpm.start_servers=10 -dpm.max_children=20 -D \
         && crond -d 2 -f
