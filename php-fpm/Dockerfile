@@ -34,7 +34,6 @@ RUN  apk add --no-cache \
         php8-tidy \
         php8-ldap \
         php8-pgsql \
-        php8-pdo_mysql \
         php8-mbstring \
         php8-ctype \
         php8-pdo_dblib \
@@ -43,7 +42,6 @@ RUN  apk add --no-cache \
         php8-bz2 \
         php8-openssl \
         php8-sysvshm \
-        php8-ftp \
         php8-pecl-mcrypt \
         php8-intl \
         php8-zlib \
@@ -52,7 +50,6 @@ RUN  apk add --no-cache \
         php8-opcache \
         php8-dba \
         php8-shmop \
-        php8-mysqlnd \
         php8-sockets \
         php8-exif \
         php8-redis \
