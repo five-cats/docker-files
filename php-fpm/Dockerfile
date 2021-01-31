@@ -73,5 +73,5 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   php-fpm8 -d opcache.enable=1 -d opcache.jit=1255 -d opcache.jit_buffer_size=100M -d pm.start_servers=10 -d pm.max_children=20 -D \
+CMD   php-fpm8 -D \
         && crond -d 2 -f
