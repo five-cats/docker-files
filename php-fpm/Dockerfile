@@ -63,12 +63,11 @@ RUN  apk add --no-cache \
 RUN  pear8 install Net_LDAP2
 RUN  apk add --no-cache busybox-suid \
         nano \
-        bash \
-        sudo
+        bash
 RUN  rm -rf \
       /usr/share/doc \
       /usr/share/man \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
-CMD   crond -d 2 && php-fpm8
+CMD   crond -d 2 && php-fpm8 --nodaemonize
