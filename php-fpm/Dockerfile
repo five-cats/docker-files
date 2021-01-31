@@ -5,13 +5,11 @@ RUN  apk update \
 RUN  apk add --no-cache \
         git \
         php8 \
-        php8-opcache \
         php8-phar \
         php8-xmlreader \
         php8-fileinfo \
         php8-zip \
         php8-gd \
-        php8-pdo_sqlite \
         php8-imap \
         php8-gmp \
         php8-bcmath \
