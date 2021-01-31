@@ -53,7 +53,6 @@ RUN  apk add --no-cache \
         php8-redis \
         php8-pecl-inotify \
         php8-pecl-uuid \
-        php8-pecl-oauth \
         php8-pecl-memcached \
         php8-pecl-timezonedb \
         php8-pecl-lzf \
