@@ -14,7 +14,6 @@ RUN  apk add --no-cache \
         php8-gmp \
         php8-bcmath \
         php8-enchant \
-        php8-mysqli \
         php8-pear \
         php8-session \
         php8-xsl \
