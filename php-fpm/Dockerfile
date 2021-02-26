@@ -68,4 +68,5 @@ RUN  rm -rf \
       /tmp/* \
       /var/cache/apk/*
 WORKDIR /srv
+USER  nobody
 CMD   crond -d 2 && php-fpm8 --nodaemonize --force-stderr
