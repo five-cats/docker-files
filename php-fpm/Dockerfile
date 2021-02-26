@@ -67,6 +67,7 @@ RUN  rm -rf \
       /usr/share/man \
       /tmp/* \
       /var/cache/apk/*
+RUN  chown -R /etc/php* /var/log/php8
 WORKDIR /srv
 USER  nobody
 CMD   crond -d 2 && php-fpm8 --nodaemonize --force-stderr
