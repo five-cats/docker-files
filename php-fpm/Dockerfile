@@ -67,6 +67,7 @@ RUN  rm -rf \
       /usr/share/man \
       /tmp/* \
       /var/cache/apk/*
+RUN  ln -s /usr/bin/php8 /usr/bin/php
 RUN  chown -R nobody /etc/php* /var/log/php8
 WORKDIR /srv
 USER  nobody
