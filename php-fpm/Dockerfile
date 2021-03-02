@@ -3,6 +3,9 @@ RUN  echo "http://dl-4.alpinelinux.org/alpine/edge/testing" >> /etc/apk/reposito
 RUN  apk update \
         && apk upgrade
 RUN  apk add --no-cache \
+        busybox-suid \
+        nano \
+        bash \
         git \
         php8 \
         php8-phar \
@@ -58,9 +61,6 @@ RUN  apk add --no-cache \
         php8-pecl-mailparse \
         php8-pecl-apcu
 RUN  pear8 install Net_LDAP2
-RUN  apk add --no-cache busybox-suid \
-        nano \
-        bash
 RUN  rm -rf \
       /usr/share/doc \
       /usr/share/man \
