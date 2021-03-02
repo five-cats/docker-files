@@ -24,14 +24,15 @@ RUN  apk add --no-cache \
         php8-curl \
         php8-iconv \
         php8-gettext \
+        php8-pdo \
         php8-pdo_pgsql \
         php8-pdo_mysql \
+        php8-pdo_dblib \
         php8-common \
         php8-json \
         php8-sysvsem \
         php8-calendar \
         php8-posix \
-        php8-pdo \
         php8-tidy \
         php8-ldap \
         php8-pgsql \
