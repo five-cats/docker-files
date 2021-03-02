@@ -33,7 +33,6 @@ RUN  apk add --no-cache \
         php8-pgsql \
         php8-mbstring \
         php8-ctype \
-        php8-pdo_dblib \
         php8-pcntl \
         php8-fpm \
         php8-bz2 \
