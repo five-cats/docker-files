@@ -25,6 +25,7 @@ RUN  apk add --no-cache \
         php8-iconv \
         php8-gettext \
         php8-pdo_pgsql \
+        php8-pdo_mysql \
         php8-common \
         php8-json \
         php8-sysvsem \
