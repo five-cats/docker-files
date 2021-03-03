@@ -71,5 +71,4 @@ RUN  rm -rf \
 RUN  ln -s /usr/bin/php8 /usr/bin/php
 RUN  chown -R nobody /etc/php* /var/log/php8
 WORKDIR /srv
-USER  nobody
 CMD   crond -d 2 && php-fpm8 --nodaemonize --force-stderr
